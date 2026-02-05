@@ -27,6 +27,14 @@ class MyApp extends StatelessWidget {
           title: Text("Flutter App"),
           leading: Icon(Icons.menu),
         ),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+            SizedBox(height: 10),
+            FloatingActionButton(onPressed: () {}, child: Icon(Icons.search)),
+          ],
+        ),
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
