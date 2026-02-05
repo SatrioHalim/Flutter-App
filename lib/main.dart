@@ -7,21 +7,9 @@ void main() {
 String name = "Polytron";
 int number = 1;
 double rate = 8.2;
-List productList = [
-  'Value 1',
-  'Value 2',
-  'etc'
-];
-Map productMap = {
-  'Key 1' : 'Value 1',
-  'Key 2' : 'Value 2',
-  'etc' : 'etc',
-};
-Map<String,dynamic> productMap2 = {
-  'Key 1' : 12345,
-  'Key 2' : 10.9
-};
-
+List productList = ['Value 1', 'Value 2', 'etc'];
+Map productMap = {'Key 1': 'Value 1', 'Key 2': 'Value 2', 'etc': 'etc'};
+Map<String, dynamic> productMap2 = {'Key 1': 12345, 'Key 2': 10.9};
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -30,6 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner:
+          false, // biar flag debug di pojok kanan atas hilang
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -47,7 +37,10 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark,
+        ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -107,7 +100,26 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Text('Hello World', style: TextStyle(color: Colors.purple[600])),
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          margin: EdgeInsets.all(50.0),
+          padding: EdgeInsets.all(50.0),
+          decoration: BoxDecoration(
+            color: Colors.amber[400],
+            borderRadius: BorderRadius.circular(25.0),
+          ),
+          child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            padding: EdgeInsets.all(50.0),
+            decoration: BoxDecoration(
+              color: Colors.orange,
+              borderRadius: BorderRadius.circular(25.0),
+            ),
+            child: Text('Hello World', style: TextStyle(color: Colors.black)),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
