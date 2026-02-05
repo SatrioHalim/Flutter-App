@@ -98,24 +98,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         leading: Icon(Icons.menu),
       ),
-      body: Container(
-        // padding: EdgeInsets.all(50),
-        child: Stack(
-          // alignment: AlignmentGeometry.center,
-          children: [
-            // Image.asset('assets/images/wall.jpg', fit: BoxFit.cover),
-            Center(child: Text("Flutter", style: TextStyle(fontSize: 30))),
-            ListTile(
-              tileColor: Colors.red,
-              title: Text("Testing"),
-              leading: Icon(Icons.join_full),
-              trailing: Text("trailing"),
-              onTap: () {
-                print("List Tile telah di klik");
-              },
-            ),
-          ],
-        ),
+      body: Wrap(
+        children: [
+          Text("dwadwadawdawdwadawdawdwadawd"),
+          Text("dwadwadawdawdwadawdawdwadawd"),
+          Text("dwadwadawdawdwadawdawdwadawd"),
+          Text("dwadwadawdawdwadawdawdwadawd"),
+          Text("dwadwadawdawdwadawdawdwadawd"),
+          Text("dwadwadawdawdwadawdawdwadawd"),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
