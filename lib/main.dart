@@ -96,36 +96,25 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading: Icon(Icons.menu),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Container(
-          color: Colors.black38,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  color: Colors.amber[400],
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-                child: Center(
-                  child: Text("Hello!", style: TextStyle(color: Colors.black)),
-                ),
-              ),
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  color: Colors.amber[400],
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-              ),
-            ],
-          ),
+      body: Container(
+        // padding: EdgeInsets.all(50),
+        child: Stack(
+          // alignment: AlignmentGeometry.center,
+          children: [
+            // Image.asset('assets/images/wall.jpg', fit: BoxFit.cover),
+            Center(child: Text("Flutter", style: TextStyle(fontSize: 30))),
+            ListTile(
+              tileColor: Colors.red,
+              title: Text("Testing"),
+              leading: Icon(Icons.join_full),
+              trailing: Text("trailing"),
+              onTap: () {
+                print("List Tile telah di klik");
+              },
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
