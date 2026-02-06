@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/widget_tree.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-// Stateless
-// Material App
-// Scaffold
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
+    // Widget ini bakal di build tiap di refresh
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -21,29 +24,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Flutter App"),
-          leading: Icon(Icons.menu),
-        ),
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
-            SizedBox(height: 10),
-            FloatingActionButton(onPressed: () {}, child: Icon(Icons.search)),
-          ],
-        ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-          ],
-          onDestinationSelected: (int value) {},
-          selectedIndex: 0,
-        ),
-      ),
+      home: WidgetTree(),
     );
   }
 }
